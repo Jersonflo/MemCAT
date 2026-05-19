@@ -25,14 +25,14 @@ class Config:
 
     # ─── Detección de gestos ─────────────────────────────────────────────────
     # Umbral Y normalizado [0-1]: mano alzada si wrist.y < este valor
-    RAISED_HAND_Y_THRESHOLD: float = 0.85
+    RAISED_HAND_Y_THRESHOLD: float = 0.35
 
     # Ratio fingertip-vs-MCP para decidir si un dedo está doblado
     # (menor ratio = más cerrado)
     FIST_CURL_RATIO: float = 0.85
 
     # Número mínimo de dedos doblados para considerar que es puño
-    FIST_MIN_CURLED_FINGERS: int = 2
+    FIST_MIN_CURLED_FINGERS: int = 3
 
     # Cuántos frames consecutivos debe mantenerse la pose para activar el GIF
     POSE_HOLD_FRAMES: int = 15

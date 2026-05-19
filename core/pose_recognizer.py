@@ -107,13 +107,14 @@ class PoseRecognizer:
                 "extended": extended,
             }
 
-            # ── Mano arriba (Cualquier punto arriba de la mitad) ───────────
-            # Detecta si cualquier punto de la mano está en la mitad superior (y < 0.5)
-            if any(lm[1] < 0.5 for lm in lms):
+            # ── Mano IZQUIERDA levantada y abierta ─────────────────────────
+            # LEFT hand: muñeca arriba + dedos extendidos
+            if hand.handedness == "Left" and wrist_y < self._raised_y and extended >= 3:
                 raised_open_found = True
 
-            # ── Puño ──────────────────────────────────────────────────────
-            if curled >= self._fist_min and wrist_y < self._fist_max_y:
+            # ── Mano DERECHA en puño ───────────────────────────────────────
+            # RIGHT hand: dedos doblados + muñeca no muy abajo
+            if hand.handedness == "Right" and curled >= self._fist_min and wrist_y < self._fist_max_y:
                 fist_found = True
 
         state.has_raised_open = raised_open_found

@@ -51,8 +51,8 @@ def main() -> None:
         GIF_POSITION="top-right",
         GIF_SIZE=(280, 280),
         GIF_SPEED=2,
-        POSE_HOLD_FRAMES=8,
-        RAISED_HAND_Y_THRESHOLD=0.42,
+        POSE_HOLD_FRAMES=8, 
+        RAISED_HAND_Y_THRESHOLD=0.5, 
         FIST_MIN_CURLED_FINGERS=3,
     )
 
